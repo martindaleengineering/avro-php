@@ -447,7 +447,7 @@ class AvroSchema
       case self::REQUEST_SCHEMA:
         if (is_array($datum))
         {
-          if (count($expected_schema->fields()) < count($datum))
+          if (count($expected_schema->fields()) !== count($datum))
              return false;
 
           foreach ($expected_schema->fields() as $field)
